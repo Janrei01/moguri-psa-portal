@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>公安内部職員ポータル｜業務連絡</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+<a class="skip-link" href="#content">本文へ移動</a>
+
+<div class="site">
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <div class="brand">
+        <h1>公安内部職員ポータル</h1>
+        <div class="sub">Public Security Agency / Internal Personnel Portal</div>
+      </div>
+<div class="meta">
+  <div>本日：<span id="currentDate">----</span></div>
+  <div>最終ログイン：<strong><span id="lastLogin">----</span></strong></div>
+</div>
+  </header>
+
+  <div class="wrap">
+    <aside class="sidebar" aria-label="サイドメニュー">
+      <h2>メニュー</h2>
+      <div class="userbox">
+        <div class="label">ログイン中の利用者</div>
+        <p class="name">潜 成入</p>
+        <div class="line">職員番号：PSA-J-0714</div>
+        <div class="line">所属：公安調査庁</div>
+      </div>
+
+      <nav class="nav" aria-label="主要リンク">
+        <a href="index.html">メイン</a>
+        <a href="news.html">お知らせ</a>
+        <a href="profile.html">個人情報照会</a>
+        <a href="dept.html">所属・役職情報</a>
+        <a href="messages.html" aria-current="page">業務連絡</a>
+        <a href="applications.html">各種申請</a>
+        <a href="links.html">内部リンク集</a>
+        <a href="help.html">ヘルプ</a>
+      </nav>
+    </aside>
+
+    <main class="main" id="content" role="main">
+      <div class="breadcrumbs">
+        <a href="index.html">トップ</a> &gt; <span>業務連絡</span>
+      </div>
+
+      <h2 class="page-title">業務連絡</h2>
+      <p class="lead">所属別の連絡は別途掲示板を参照してください。当ページは全体連絡の簡易掲示です。</p>
+
+      <div class="alert warn" role="note">
+        <div class="title">注意</div>
+        <p>外部への転載・転記は禁止されています。必要な場合は所属の手順に従ってください。</p>
+      </div>
+
+      <div class="cards" role="list">
+        <article class="card" role="listitem">
+          <div class="kicker">20██/██/██ <span class="tag">連絡</span></div>
+          <div class="headline">定期健康診断：予約導線の統一</div>
+          <p class="meta">
+            予約は所属指定の窓口を利用すること。個別の問い合わせは受け付けません。<br>
+            受診期限：20██/██/██（金）<a href="health_check.html">詳しい情報はこちら</a>
+          </p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="kicker">20██/██/██ <span class="tag">注意</span></div>
+          <div class="headline">端末持出しの取扱い</div>
+          <p class="meta">
+            端末・記録媒体の移動は、事前申請および管理票の運用を厳守。<br>
+            紛失時は発覚時点で所属窓口へ連絡。
+          </p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="kicker">20██/██/██ <span class="tag">通知</span></div>
+          <div class="headline">年度末：書類整理について</div>
+          <p class="meta">
+            保存期限に従い整理を実施。分類不明の資料は所属の運用に従うこと。
+          </p>
+        </article>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      公安調査庁（内部）／本サイトは職員専用です。<br>
+      〒1██-████ 東京都██区██町██丁目　｜　© 20██ Public Security Agency
+    </div>
+  </footer>
+</div>
+<script>
+  (function () {
+    const now = new Date();
+
+    // フォーマット関数
+    function formatDateTime(date) {
+      const y = date.getFullYear();
+      const m = String(date.getMonth() + 1).padStart(2, "0");
+      const d = String(date.getDate()).padStart(2, "0");
+      const h = String(date.getHours()).padStart(2, "0");
+      const min = String(date.getMinutes()).padStart(2, "0");
+      return `${y}/${m}/${d} ${h}:${min}`;
+    }
+
+    // 本日の日時表示
+    const currentDateEl = document.getElementById("currentDate");
+    if (currentDateEl) {
+      currentDateEl.textContent = formatDateTime(now);
+    }
+
+    // 最終ログイン表示（前回アクセス）
+    const lastLoginEl = document.getElementById("lastLogin");
+    const lastLogin = localStorage.getItem("lastLoginTime");
+
+    if (lastLogin && lastLoginEl) {
+      lastLoginEl.textContent = lastLogin;
+    } else if (lastLoginEl) {
+      lastLoginEl.textContent = "—";
+    }
+
+    // 今回のアクセスを保存
+    localStorage.setItem("lastLoginTime", formatDateTime(now));
+  })();
+</script>
+</body>
+</html>

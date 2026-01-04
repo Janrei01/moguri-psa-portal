@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>健康診断のご案内｜期間限定ページ</title>
+
+  <!-- ポータルのCSSを使いつつ、健康診断ページだけ別デザインに寄せる -->
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body class="health-body">
+  <a class="skip-link" href="#content">本文へ移動</a>
+
+  <header class="health-hero" role="banner">
+    <div class="health-hero-inner">
+      <div class="health-badge">期間限定</div>
+      <h1 class="health-title">健康診断のご案内</h1>
+      <p class="health-sub">
+        年度の定期健診に関する情報ページです。予約・当日の流れ・持ち物をまとめています。
+      </p>
+
+      <div class="health-hero-meta">
+        <div class="health-pill">
+          <span class="label">受付期間</span>
+          <strong>20██/██/██ 〜 20██/██/██</strong>
+        </div>
+        <div class="health-pill">
+          <span class="label">対象</span>
+          <strong>常勤・非常勤（所属運用）</strong>
+        </div>
+        <div class="health-pill">
+          <span class="label">更新</span>
+          <strong id="hcUpdated">20██/██/██</strong>
+        </div>
+      </div>
+
+      <div class="health-hero-actions">
+ <a class="health-btn primary" href="health_booking.html">予約ページへ</a>
+        <a class="health-btn" href="index.html">ポータルへ戻る</a>
+      </div>
+
+      <div class="health-note">
+        ※予約ページは所属の運用に従ってください（このページ内のボタンは演出です）。
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="health-main" role="main">
+    <section class="health-grid">
+      <article class="health-card">
+        <h2>ざっくり要点</h2>
+        <ul class="health-list">
+          <li>所要時間：<strong>約45〜90分</strong>（混雑状況で前後）</li>
+          <li>当日持参：<strong>身分証</strong>／<strong>問診票</strong>／<strong>眼鏡・コンタクトケース</strong>（該当者）</li>
+          <li>服装：<strong>脱ぎ着しやすい</strong>もの推奨</li>
+          <li>注意：<strong>再検査</strong>が出た場合は追って連絡（所属運用）</li>
+        </ul>
+      </article>
+
+      <article class="health-card">
+        <h2>予約の流れ</h2>
+        <ol class="health-steps">
+          <li><span class="num">1</span> 受付期間内に枠を選択</li>
+          <li><span class="num">2</span> 問診票を入力（または印刷）</li>
+          <li><span class="num">3</span> 当日、受付で身分証提示</li>
+          <li><span class="num">4</span> 案内に従って検査へ</li>
+        </ol>
+        <div class="health-small">
+          予約枠は先着順のため、混雑する時間帯は早めの確保を推奨します。
+        </div>
+      </article>
+
+      <article class="health-card">
+        <h2>当日のタイムライン</h2>
+        <div class="health-timeline">
+          <div class="row"><div class="time">受付</div><div class="desc">本人確認／問診票チェック</div></div>
+          <div class="row"><div class="time">測定</div><div class="desc">身長・体重・視力・聴力</div></div>
+          <div class="row"><div class="time">検査</div><div class="desc">採血／血圧／心電図など</div></div>
+          <div class="row"><div class="time">診察</div><div class="desc">医師面談（必要に応じて）</div></div>
+          <div class="row"><div class="time">終了</div><div class="desc">結果は後日通知（所属運用）</div></div>
+        </div>
+      </article>
+
+      <article class="health-card">
+        <h2>持ち物チェック</h2>
+        <div class="health-checks">
+          <label class="health-check"><input type="checkbox"> 身分証（職員証）</label>
+          <label class="health-check"><input type="checkbox"> 問診票</label>
+          <label class="health-check"><input type="checkbox"> 眼鏡／コンタクト用品</label>
+          <label class="health-check"><input type="checkbox"> 服薬中の情報（薬名メモ等）</label>
+          <label class="health-check"><input type="checkbox"> 水分（必要なら）</label>
+        </div>
+        <div class="health-small">
+          チェックはこの端末内だけに反映されます（ページを閉じると消える場合があります）。
+        </div>
+      </article>
+
+      <article class="health-card wide">
+        <h2>よくある質問</h2>
+
+        <details class="health-faq" open>
+          <summary>予約を変更したい</summary>
+          <div class="answer">
+            予約枠の変更は、予約ページから再選択してください。枠の状況により希望日に沿えない場合があります。
+          </div>
+        </details>
+
+        <details class="health-faq">
+          <summary>当日遅れそう</summary>
+          <div class="answer">
+            受付へ申告してください。混雑状況により、後ろの枠へ案内される場合があります。
+          </div>
+        </details>
+
+        <details class="health-faq">
+          <summary>服装は？</summary>
+          <div class="answer">
+            検査の都合上、着脱しやすい服装が推奨です。アクセサリー類は外せるものが安心です。
+          </div>
+        </details>
+
+        <details class="health-faq">
+          <summary>結果はいつ分かる？</summary>
+          <div class="answer">
+            結果通知のタイミングは所属の運用に従ってください。再検査が必要な場合は別途案内されます。
+          </div>
+        </details>
+      </article>
+
+      <article class="health-card wide">
+        <h2>問い合わせ</h2>
+        <div class="health-contact">
+          <div class="item">
+            <div class="k">窓口</div>
+            <div class="v">総務（所属窓口）</div>
+          </div>
+          <div class="item">
+            <div class="k">内線</div>
+            <div class="v">11██</div>
+          </div>
+          <div class="item">
+            <div class="k">受付</div>
+            <div class="v">平日 09:00–17:30</div>
+          </div>
+        </div>
+
+        <div class="health-footer-actions">
+          <a class="health-btn" href="news.html">お知らせへ戻る</a>
+          <a class="health-btn" href="messages.html">業務連絡へ戻る</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="health-footer" role="contentinfo">
+    <div class="health-footer-inner">
+      このページは期間限定で公開されています。<br>
+      記載内容は所属の運用により変更される場合があります。
+    </div>
+  </footer>
+
+  <script>
+    // それっぽい更新日を「今日」にする（表示だけ）
+    (function(){
+      const d = new Date();
+      const pad = (n)=> String(n).padStart(2,'0');
+      const today = d.getFullYear() + "/" + pad(d.getMonth()+1) + "/" + pad(d.getDate());
+      const el = document.getElementById("hcUpdated");
+      if(el) el.textContent = today;
+
+      // 予約ボタン：遷移っぽい演出（実運用はしない）
+      const btn = document.getElementById("hcBookBtn");
+      btn.addEventListener("click", function(){
+        alert("予約ページを開きます。");
+      });
+    })();
+  </script>
+</body>
+</html>
