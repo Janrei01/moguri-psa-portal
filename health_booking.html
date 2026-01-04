@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>健康診断 予約｜期間限定</title>
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body class="health-body">
+<header class="health-hero">
+  <div class="health-hero-inner">
+    <div class="health-badge">期間限定</div>
+    <h1 class="health-title">健康診断 予約</h1>
+    <p class="health-sub">
+      希望する日時を選択してください。<br>
+      予約内容は後から確認できます（所属運用）。
+    </p>
+
+    <div class="health-hero-actions">
+      <a class="health-btn" href="health_check.html">案内ページへ戻る</a>
+      <a class="health-btn" href="index.html">ポータルへ戻る</a>
+    </div>
+  </div>
+</header>
+
+<main class="health-main" id="content">
+  <section class="health-grid">
+
+    <!-- 予約フォーム -->
+    <article class="health-card wide">
+      <h2>予約内容</h2>
+
+      <form id="bookingForm" class="health-form">
+        <div class="health-form-row">
+          <label>氏名</label>
+          <input type="text" value="潜 成入" readonly>
+        </div>
+
+        <div class="health-form-row">
+          <label>職員番号</label>
+          <input type="text" value="PSA-J-0714" readonly>
+        </div>
+
+        <div class="health-form-row">
+          <label for="date">希望日</label>
+          <input type="date" id="date" required>
+        </div>
+
+        <div class="health-form-row">
+          <label for="time">時間帯</label>
+          <select id="time" required>
+            <option value="">選択してください</option>
+            <option>09:00–10:00</option>
+            <option>10:00–11:00</option>
+            <option>11:00–12:00</option>
+            <option>13:00–14:00</option>
+            <option>14:00–15:00</option>
+            <option>15:00–16:00</option>
+          </select>
+        </div>
+
+        <div class="health-form-row">
+          <label for="note">備考（任意）</label>
+          <textarea id="note" rows="3" placeholder="特記事項があれば入力してください"></textarea>
+        </div>
+
+        <div class="health-form-actions">
+          <button type="submit" class="health-btn primary">この内容で予約する</button>
+        </div>
+      </form>
+
+      <div class="health-small">
+        ※予約内容は端末内表示のみです。実際の受付は所属の運用に従ってください。
+      </div>
+    </article>
+
+    <!-- 補足 -->
+    <article class="health-card">
+      <h2>注意事項</h2>
+      <ul class="health-list">
+        <li>予約は<strong>先着順</strong>です。</li>
+        <li>当日の混雑状況により、案内時間が前後する場合があります。</li>
+        <li>変更が必要な場合は、再度予約してください。</li>
+      </ul>
+    </article>
+
+    <article class="health-card">
+      <h2>キャンセルについて</h2>
+      <p class="health-small">
+        予約後に来所できなくなった場合は、<br>
+        所属窓口へ連絡してください。
+      </p>
+    </article>
+
+  </section>
+</main>
+
+<footer class="health-footer">
+  <div class="health-footer-inner">
+    健康診断予約ページ（期間限定）<br>
+    内容は予告なく変更される場合があります。
+  </div>
+</footer>
+
+<script>
+  document.getElementById("bookingForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+
+    if(!date || !time){
+      alert("希望日と時間帯を選択してください。");
+      return;
+    }
+
+    alert(
+      "健康診断の予約を受け付けました。\n\n" +
+      "予約日：" + date + "\n" +
+      "時間帯：" + time + "\n\n" +
+      "当日は受付時間にお越しください。"
+    );
+  });
+</script>
+</body>
+</html>
